@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jordan Reyes — Learning &amp; Development</title>
+<meta name="description" content="Portfolio of Jordan Reyes, an instructional designer and learning experience professional.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --paper: #FAF8F3;
+    --paper-dim: #F1EEE5;
+    --ink: #1E2A32;
+    --ink-soft: #4A5A63;
+    --rule: #D9D3C4;
+    --teal: #386268;
+    --teal-deep: #23434A;
+    --gold: #C9A227;
+    --gold-soft: #F1E3B0;
+    --serif: 'Source Serif 4', Georgia, serif;
+    --sans: 'IBM Plex Sans', -apple-system, sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+    --max: 880px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    *{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  }
+
+  body{
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: var(--teal-deep); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline: 2px solid var(--teal-deep);
+    outline-offset: 3px;
+  }
+
+  ::selection{ background: var(--gold-soft); }
+
+  .wrap{
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- Nav ---------- */
+  nav.top{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(250,248,243,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--rule);
+  }
+  nav.top .wrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 62px;
+  }
+  .brand{
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .navlinks{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0; padding: 0;
+  }
+  .navlinks a{
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+  }
+  .navlinks a:hover{ color: var(--teal-deep); }
+  .navlinks .num{ color: var(--gold); margin-right: 4px; }
+  @media (max-width: 720px){
+    .navlinks{ display: none; }
+  }
+
+  /* ---------- Module label (signature element) ---------- */
+  .module-tag{
+    display: inline-flex;
+    align-items: baseline;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--teal-deep);
+    margin-bottom: 18px;
+  }
+  .module-tag .n{
+    background: var(--teal-deep);
+    color: var(--paper);
+    padding: 3px 8px;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+  .module-tag .line{ color: var(--rule); }
+
+  section{
+    padding: 88px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  section:last-of-type{ border-bottom: none; }
+
+  h1,h2,h3{
+    font-family: var(--serif);
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0 0 0.5em 0;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding-top: 110px;
+    padding-bottom: 96px;
+  }
+  .hero .wrap{
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 48px;
+    align-items: center;
+  }
+  @media (max-width: 720px){
+    .hero .wrap{ grid-template-columns: 1fr; }
+    .hero-photo-wrap{ order: -1; width: 160px; margin: 0 auto; }
+  }
+  .hero .kicker{
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 22px;
+  }
+  .hero h1{
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    line-height: 1.08;
+  }
+  .hero .role{
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--teal-deep);
+    margin-bottom: 22px;
+  }
+  .hero p.lede{
+    max-width: 56ch;
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    margin-bottom: 34px;
+  }
+  .hero .cta-row{ display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero-photo-wrap{ width: 100%; }
+  .hero-photo{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .btn{
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 13px 22px;
+    border-radius: 2px;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+  }
+  .btn:hover{ transform: translateY(-1px); }
+  .btn.primary{ background: var(--ink); color: var(--paper); }
+  .btn.primary:hover{ background: var(--teal-deep); border-color: var(--teal-deep); }
+  .btn.ghost:hover{ background: var(--paper-dim); }
+
+  .highlight{
+    background: linear-gradient(to top, var(--gold-soft) 42%, transparent 42%);
+    padding: 0 2px;
+  }
+
+  /* ---------- About ---------- */
+  .about-grid{
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+  @media (max-width: 720px){ .about-grid{ grid-template-columns: 1fr; gap: 32px; } }
+  .about-grid p{ color: var(--ink-soft); max-width: 60ch; }
+  .about-grid p + p{ margin-top: 1em; }
+
+  .facts{
+    background: var(--paper-dim);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 22px 24px;
+  }
+  .facts dt{
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    margin-top: 16px;
+  }
+  .facts dt:first-child{ margin-top: 0; }
+  .facts dd{ margin: 3px 0 0 0; font-size: 0.95rem; color: var(--ink); }
+
+  .chips{ display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 14px 0 0; list-style: none; }
+  .chips li{
+    font-family: var(--mono);
+    font-size: 0.76rem;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 6px 11px;
+    border-radius: 3px;
+    color: var(--ink);
+  }
+
+  /* ---------- Featured project ---------- */
+  .cs-intro{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 44px;
+  }
+  @media (max-width: 720px){ .cs-intro{ grid-template-columns: 1fr; } }
+  .cs-intro h3{
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--teal-deep);
+    margin-bottom: 8px;
+  }
+  .cs-intro p{ color: var(--ink-soft); margin: 0; }
+  .cs-meta{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink-soft);
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .cs-meta b{ display:block; color: var(--ink); font-family: var(--sans); text-transform: none; font-size: 0.85rem; margin-top: 3px; font-weight:600;}
+
+  .cs-block{ margin-bottom: 40px; }
+  .cs-block .label{
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .embed-frame{
+    position: relative;
+    width: 100%;
+    padding-bottom: 62%;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--paper-dim);
+  }
+  .embed-frame iframe{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: 0;
+  }
+  .board-caption{
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+    margin-top: 10px;
+  }
+
+  .outcome-box{
+    background: var(--paper-dim);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--teal-deep);
+    border-radius: 4px;
+    padding: 24px 26px;
+  }
+  .outcome-box .label{ color: var(--teal-deep); }
+  .outcome-box p{ color: var(--ink); margin: 0; }
+
+  /* ---------- Testimonials ---------- */
+  .testimonial-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  @media (max-width: 860px){ .testimonial-grid{ grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 620px){ .testimonial-grid{ grid-template-columns: 1fr; } }
+  .testimonial{
+    background: var(--paper-dim);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 26px 22px;
+    display: flex;
+    flex-direction: column;
+  }
+  .testimonial blockquote{
+    margin: 0 0 20px 0;
+    font-family: var(--serif);
+    font-size: 1.02rem;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .testimonial blockquote::before{ content: "“"; color: var(--gold); }
+  .testimonial blockquote::after{ content: "”"; color: var(--gold); }
+  .t-person{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+  }
+  .t-avatar{
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--teal-deep);
+    color: var(--paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+  .t-name{ font-size: 0.9rem; font-weight: 600; color: var(--ink); }
+  .t-role{ font-family: var(--mono); font-size: 0.68rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.04em; }
+
+  /* ---------- Process ---------- */
+  .process-cols{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+  @media (max-width: 720px){ .process-cols{ grid-template-columns: 1fr; gap: 36px; } }
+  .process-cols h3{
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--teal-deep);
+    margin-bottom: 14px;
+  }
+  .steps{ list-style: none; margin: 0; padding: 0; counter-reset: step; }
+  .steps li{
+    counter-increment: step;
+    position: relative;
+    padding-left: 34px;
+    margin-bottom: 16px;
+    color: var(--ink-soft);
+  }
+  .steps li::before{
+    content: counter(step);
+    position: absolute;
+    left: 0; top: 0;
+    width: 22px; height: 22px;
+    border: 1px solid var(--teal-deep);
+    color: var(--teal-deep);
+    border-radius: 50%;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .steps li b{ color: var(--ink); }
+
+  /* ---------- Contact ---------- */
+  .contact{ background: var(--teal-deep); color: var(--paper); }
+  .contact .module-tag{ color: var(--gold-soft); }
+  .contact .module-tag .n{ background: var(--gold); color: var(--teal-deep); }
+  .contact h2{ color: var(--paper); }
+  .contact p.lede{
+    color: #CFE0E1;
+    max-width: 54ch;
+    font-size: 1.02rem;
+    margin-bottom: 34px;
+  }
+  .contact-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+  @media (max-width: 720px){ .contact-grid{ grid-template-columns: 1fr; gap: 30px; } }
+  .field{ margin-bottom: 18px; }
+  .field label{
+    display: block;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #CFE0E1;
+    margin-bottom: 6px;
+  }
+  .field input, .field textarea{
+    width: 100%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 3px;
+    padding: 11px 12px;
+    color: var(--paper);
+    font-family: var(--sans);
+    font-size: 0.92rem;
+  }
+  .field input::placeholder, .field textarea::placeholder{ color: rgba(250,248,243,0.4); }
+  .field textarea{ min-height: 120px; resize: vertical; }
+  .contact form .btn.primary{
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--teal-deep);
+    font-weight: 600;
+  }
+  .contact form .btn.primary:hover{ background: var(--gold-soft); border-color: var(--gold-soft); }
+  .form-note{
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: #A9C2C4;
+    margin-top: 10px;
+  }
+  .contact .links{
+    margin-top: 30px;
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+  }
+  .contact .links a{ color: var(--paper); }
+
+  footer{
+    padding: 26px 0 40px;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--ink-soft);
+    background: var(--paper);
+  }
+
+  .reveal{ opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.in{ opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Jordan Reyes</a>
+    <ul class="navlinks">
+      <li><a href="#about"><span class="num">01</span>About</a></li>
+      <li><a href="#project"><span class="num">02</span>Project</a></li>
+      <li><a href="#testimonials"><span class="num">03</span>Testimonials</a></li>
+      <li><a href="#process"><span class="num">04</span>Process</a></li>
+      <li><a href="#contact"><span class="num">05</span>Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="kicker">Learning &amp; Development · Instructional Design</div>
+      <h1>Jordan&nbsp;Reyes</h1>
+      <div class="role">Learning Experience Designer</div>
+      <p class="lede">
+        [Your mission — one or two sentences on why you design training and what you want it
+        to do for people. e.g. "I design learning that people actually finish — because the
+        best training doesn't feel like training, it feels like <span class="highlight">getting unstuck</span>."]
+      </p>
+      <div class="cta-row">
+        <a class="btn primary" href="#project">See the featured project</a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <img class="hero-photo" src="assets/profile-placeholder.svg" alt="Photo of Jordan Reyes">
+    </div>
+  </div>
+</header>
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <div class="wrap">
+    <div class="module-tag"><span class="n">01</span><span class="line">About</span></div>
+    <h2>About me</h2>
+    <div class="about-grid">
+      <div>
+        <p>
+          [Replace this paragraph with your story: what pulled you toward learning &amp;
+          development, and what you bring from your previous field. Hiring managers care less
+          about your job titles and more about evidence you understand how people learn.]
+        </p>
+        <p>
+          [Second paragraph — mention relevant coursework or certifications, and the kind of
+          L&amp;D work you want to do: onboarding, compliance, leadership development,
+          sales enablement, etc.]
+        </p>
+        <ul class="chips">
+          <li>ADDIE</li>
+          <li>Storyboarding</li>
+          <li>Figma</li>
+          <li>Miro</li>
+          <li>[Add your tools]</li>
+        </ul>
+      </div>
+      <dl class="facts">
+        <dt>Based in</dt>
+        <dd>[Your city]</dd>
+        <dt>Focus</dt>
+        <dd>Instructional design · Onboarding &amp; enablement</dd>
+        <dt>Currently</dt>
+        <dd>[e.g. "Open to L&amp;D roles"]</dd>
+        <dt>Résumé</dt>
+        <dd><a href="assets/cv.pdf" target="_blank" rel="noopener">Download PDF</a></dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FEATURED PROJECT ================= -->
+<section id="project">
+  <div class="wrap">
+    <div class="module-tag"><span class="n">02</span><span class="line">Featured project</span></div>
+    <h2>[Project title — e.g. "Redesigning New-Hire Onboarding"]</h2>
+
+    <div class="cs-meta">
+      <div>Role <b>[Your role]</b></div>
+      <div>Timeline <b>[e.g. 6 weeks]</b></div>
+      <div>Tools <b>Miro · Figma · [others]</b></div>
+      <div>Format <b>[e.g. eLearning module]</b></div>
+    </div>
+
+    <div class="cs-intro">
+      <div>
+        <h3>The problem</h3>
+        <p>[What wasn't working, for whom, and how you knew — a metric, complaints, a gap
+          you observed. Be concrete.]</p>
+      </div>
+      <div>
+        <h3>The solution</h3>
+        <p>[What you built and why it addresses the problem above. One clear sentence
+          on the approach, then the details live in the blocks below.]</p>
+      </div>
+    </div>
+
+    <div class="cs-block">
+      <div class="label">Planning — Miro board (live)</div>
+      <div class="embed-frame">
+        <iframe
+          src="PASTE_YOUR_MIRO_EMBED_LINK_HERE"
+          allow="fullscreen; clipboard-read; clipboard-write"
+          allowfullscreen
+          title="Miro board showing the planning process for this project">
+        </iframe>
+      </div>
+      <p class="board-caption">
+        [In Miro: Share → Embed board → copy the link it gives you → paste it in place of
+        PASTE_YOUR_MIRO_EMBED_LINK_HERE above.]
+        &nbsp;<a href="#">Open board in a new tab ↗</a>
+      </p>
+    </div>
+
+    <div class="cs-block">
+      <div class="label">Prototype — Figma (clickable)</div>
+      <div class="embed-frame">
+        <iframe
+          src="https://www.figma.com/embed?embed_host=share&url=PASTE_YOUR_FIGMA_SHARE_LINK_HERE"
+          allowfullscreen
+          title="Clickable Figma prototype">
+        </iframe>
+      </div>
+      <p class="board-caption">
+        [In Figma: Share → set "Anyone with the link can view" → copy the link → paste it
+        in place of PASTE_YOUR_FIGMA_SHARE_LINK_HERE in index.html, right after
+        "embed_host=share&url=".]
+        &nbsp;<a href="#">Open prototype in a new tab ↗</a>
+      </p>
+    </div>
+
+    <div class="outcome-box">
+      <div class="label">Outcome</div>
+      <p>[A concrete result — completion rate, time-to-competency, feedback score, or a
+        qualitative outcome if this is a practice project. Be honest about scale.]</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section id="testimonials">
+  <div class="wrap">
+    <div class="module-tag"><span class="n">03</span><span class="line">Testimonials</span></div>
+    <h2>What people say</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial">
+        <blockquote>[Quote about working with you — what they noticed about how you
+          think or work. Keep it specific, not generic praise.]</blockquote>
+        <div class="t-person">
+          <div class="t-avatar">AB</div>
+          <div>
+            <div class="t-name">[Name]</div>
+            <div class="t-role">[Role, Company]</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <blockquote>[Second testimonial — a peer or supervisor speaking to a different
+          strength than the first quote.]</blockquote>
+        <div class="t-person">
+          <div class="t-avatar">CD</div>
+          <div>
+            <div class="t-name">[Name]</div>
+            <div class="t-role">[Role, Company]</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <blockquote>[Third testimonial — ideally from someone who experienced your
+          training or work firsthand.]</blockquote>
+        <div class="t-person">
+          <div class="t-avatar">EF</div>
+          <div>
+            <div class="t-name">[Name]</div>
+            <div class="t-role">[Role, Company]</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section id="process">
+  <div class="wrap">
+    <div class="module-tag"><span class="n">04</span><span class="line">Reflect</span></div>
+    <h2>How this came together</h2>
+    <p style="color:var(--ink-soft); max-width:64ch; margin-top:-8px; margin-bottom:36px;">
+      Reflection is part of good instructional practice, so here's a behind-the-scenes look
+      at both the featured project above and this website itself.
+    </p>
+    <div class="process-cols">
+      <div>
+        <h3>Designing the project</h3>
+        <ol class="steps">
+          <li><b>Analyze</b> — [How you identified the problem: interviews, a survey,
+            watching people struggle with the current process.]</li>
+          <li><b>Design</b> — [How you planned it — this is where the Miro board came in:
+            mapping learning objectives, structure, and flow.]</li>
+          <li><b>Develop</b> — [How you built it — the Figma prototype, drafting content,
+            picking tools.]</li>
+          <li><b>Implement &amp; evaluate</b> — [How it was tested or piloted, and what
+            you'd change next time.]</li>
+        </ol>
+      </div>
+      <div>
+        <h3>Building this website</h3>
+        <ol class="steps">
+          <li><b>Planned the content</b> — decided the site needed to lead with real
+            work, not a resume, since that's what L&amp;D hiring managers actually
+            want to see.</li>
+          <li><b>Drafted with Claude</b> — used Claude to write the page structure and
+            copy scaffolding, then edited it into my own voice.</li>
+          <li><b>Built in plain HTML/CSS</b> — no page builder or framework, so the
+            site loads fast and is easy to edit by hand later.</li>
+          <li><b>Published on GitHub Pages</b> — free static hosting, deployed straight
+            from a GitHub repository with no server to maintain.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="module-tag"><span class="n">05</span><span class="line">Evaluate</span></div>
+    <h2>Let's talk</h2>
+    <p class="lede">
+      Every good training program ends with a feedback loop — so does this page. If you're
+      hiring for an L&amp;D or instructional design role, I'd love to hear from you.
+    </p>
+
+    <div class="contact-grid">
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="What can I help with?" required></textarea>
+        </div>
+        <button class="btn primary" type="submit">Send message</button>
+        <p class="form-note">
+          Powered by Formspree — replace YOUR_FORM_ID in index.html with your own form ID
+          (free, no coding — see the README).
+        </p>
+      </form>
+
+      <div>
+        <div class="links" style="margin-top:0; flex-direction:column; gap:14px;">
+          <a href="mailto:you@example.com">you@example.com</a>
+          <a href="#">linkedin.com/in/yourname</a>
+          <span style="color:#CFE0E1; font-family: var(--mono); font-size: 0.8rem;">[City, Country]</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © <span id="year"></span> Jordan Reyes — Built with plain HTML &amp; CSS.
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealEls = document.querySelectorAll('section .wrap > *, header .wrap > *');
+  revealEls.forEach(el => el.classList.add('reveal'));
+
+  if(!prefersReduced && 'IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+</script>
+
+</body>
+</html>

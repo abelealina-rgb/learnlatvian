@@ -573,15 +573,12 @@
       </div>
       <div>
         <h3>The solution</h3>
-        <p>A structured onboarding framework that combines mentorship with clear self-learning, AI, and escalation guidelines—encouraging new hires to troubleshoot independently before escalating.</p>
-      </div>
-      <div>
-        <h3>Scope & Prototype</h3>
-        <p>Focused on the mentor dynamic, this prototype lets users practice when to troubleshoot with AI and when it's time to ask for help.</p>
+        <p>A structured framework guiding new hires to troubleshoot independently before escalating. 
+          This prototype focuses on the mentor dynamic—letting users practice when to use AI versus when to ask for help.</p>
       </div>
     </div>
 
-    <<div class="cs-block">
+    <div class="cs-block">
   <div class="label">Planning — Miro board (live)</div>
   <div class="embed-frame">
     <iframe
@@ -621,8 +618,7 @@
 
     <div class="outcome-box">
       <div class="label">Outcome</div>
-      <p>[A concrete result — completion rate, time-to-competency, feedback score, or a
-        qualitative outcome if this is a practice project. Be honest about scale.]</p>
+      <p>An onboarding framework and interactive prototype that is designed to reduce unnecessary mentor interruptions during the first 90 days while establishing an "AI-first, mentor-second" troubleshooting mindset.</p>
     </div>
   </div>
 </section>
@@ -683,12 +679,9 @@
       <div>
         <h3>Designing the project</h3>
         <ol class="steps">
-          <li><b>Analyze</b> — [How you identified the problem: interviews, a survey,
-            watching people struggle with the current process.]</li>
-          <li><b>Design</b> — [How you planned it — this is where the Miro board came in:
-            mapping learning objectives, structure, and flow.]</li>
-          <li><b>Develop</b> — [How you built it — the Figma prototype, drafting content,
-            picking tools.]</li>
+          <li><b>Analyze</b> — Identified a core problem through conversations with a DevOps lead, revealing a recurring pattern: new developers were defaulting to mentors for immediate answers rather than navigating problem-solving independently.</li>
+          <li><b>Design</b> — Used Miro to map out the 6-month onboarding journey, establish clear learning objectives, and architect the escalation workflow—defining the precise boundary between self-learning, AI usage, and mentor support.</li>
+          <li><b>Develop</b> — Created a clickable prototype in Figma that lets new hires practice choosing between AI, documentation, and mentor support when solving technical problems.</li>
           <li><b>Implement &amp; evaluate</b> — [How it was tested or piloted, and what
             you'd change next time.]</li>
         </ol>
@@ -696,9 +689,7 @@
       <div>
         <h3>Building this website</h3>
         <ol class="steps">
-          <li><b>Planned the content</b> — decided the site needed to lead with real
-            work, not a resume, since that's what L&amp;D hiring managers actually
-            want to see.</li>
+          <li><b>Planned the content</b> — decided to emphasize actual project work rather than just my resume, focusing on interactive case studies that show my thought process in action.</li>
           <li><b>Drafted with Claude</b> — used Claude to write the page structure and
             copy scaffolding, then edited it into my own voice.</li>
           <li><b>Built in plain HTML/CSS</b> — no page builder or framework, so the
@@ -733,7 +724,7 @@
         </div>
         <div class="field">
           <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Have more questions?" required></textarea>
+          <textarea id="message" name="message" placeholder="Have a question? I would be happy to answer!" required></textarea>
         </div>
         <button class="btn primary" type="submit">Send message</button>
       </form>
